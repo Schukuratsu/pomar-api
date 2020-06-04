@@ -1,12 +1,11 @@
 const ColheitaModel = require('../models/colheita');
-const { fromMongoose, toMongoose } = require('../helpers');
 
-const getAll = async () => fromMongoose(await ColheitaModel.find({}));
+const getAll = async () => await ColheitaModel.find({});
 
-const find = async id =>  fromMongoose(await ColheitaModel.findById(id));
+const find = async id =>  await ColheitaModel.findById(id);
 
 const save = async (payload) => {
-	const { informacoes, data, pesoBruto, ref, isGroup } = toMongoose(payload);
+	const { informacoes, data, pesoBruto, ref, isGroup } = payload;
 
 	const colheita = new ColheitaModel;
 	colheita.informacoes = informacoes;

@@ -4,17 +4,26 @@ module.exports = [
 	{
 		method: 'GET',
 		path: '/api/v1/arvore',
-		handler: arvoreHandler.getAll
+		handler: arvoreHandler.getAll,
+		options: {
+			cors: true
+		}
 	},
 	{
 		method: 'GET',
 		path: '/api/v1/arvore/{id}',
-		handler: arvoreHandler.find
+		handler: arvoreHandler.find,
+		options: {
+			cors: true
+		}
 	},
 	{
 		method: 'POST',
 		path: '/api/v1/arvore',
-		handler: arvoreHandler.save
+		handler: arvoreHandler.save,
+		options: {
+			cors: true
+		}
 	},
 	{
 		method: 'DELETE',

@@ -2,7 +2,6 @@ const ArvoreRepository = require('../repositories/arvore');
 
 const getAll = async () => {
 	const arvores = await ArvoreRepository.getAll();
-	console.log('teste');
 	return { data: arvores };
 };
 
@@ -13,7 +12,6 @@ const find = async (req) => {
 
 const save = async (req, h) => {
 	const arvore = await ArvoreRepository.save(req.payload);
-
 	return h.response(arvore).code(201);
 };
 
